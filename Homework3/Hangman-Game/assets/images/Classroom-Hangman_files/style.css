@@ -1,0 +1,18 @@
+body {
+	background-image: url(../images/linedpaper.png);
+}
+.row {
+	border:5px dashed black;
+	height: 100%;
+}
+
+#right.col-md-6 {
+	border-left: 4px dashed black;
+}
+
+p{
+
+	font-family: 'Homemade Apple', cursive;
+	font-size: 40px;
+}
+
