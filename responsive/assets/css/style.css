@@ -1,0 +1,306 @@
+html, body {
+	height: 100%;
+}
+
+body {
+	background-image: url(../images/playstation-pattern.png);
+	/*max-width: 960px;*/
+	/*width: auto;*/
+	color: #777777;
+	font-family: 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+	margin: 0 auto;
+	float: none;
+}
+
+.container {
+	max-width: 960px;
+}
+
+a{
+	text-decoration: none;
+}
+
+.cont2 {
+	max-width: 960px;
+	margin: 0 auto;
+}
+
+div.header {
+	display: block;
+	background-color: #ffffff;
+	height: 100px;
+	width: 100%;
+	padding: 25px;
+	margin: 0 auto;
+	border: 1px solid #cccccc;
+}
+
+header.logo {
+	font-family: 'Georgia', Times, Times New Roman, serif;
+	font-size: 25px;
+	color: #ffffff;
+	border-color: #cccccc;
+	background-color: #4aaaa5;
+	float: left;
+	padding: 25px;
+	display: block;
+}
+
+li {
+	float: left;
+	border-right: dashed teal;
+	padding: 10px;
+	padding-left: 0px;
+    padding-right: 0px;
+}
+
+li:last-child {
+	border-right: none;
+}
+
+ul.nav {
+	float: right;
+	width: 261px;
+}
+
+
+li a {
+	color: #777777;
+	text-align: center;
+	padding: 10px 16px;
+}
+
+li a:hover{
+	background-color: #333;
+}
+
+.active {
+	background-color: #333;
+	color: white;
+}
+
+div.main {
+	width: 650px;
+	height: 400px;
+	padding: 10px;
+	background-color: #ffffff;
+	border: 1px solid #dddddd;
+	overflow: hidden;
+	float: left;
+	color: #777777;
+}
+
+.main#portfolio {
+	height: 625px;
+}
+
+header.title {
+	font-family: 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
+	font-size: 25px;
+	color: #4aaaa5;
+	border-bottom: 1px solid #e5e5e5;
+	float: left;
+	width: 50%;
+}
+
+img#me {
+	position: relative;
+    float: left;
+    top: 40px;
+    padding-right: 20px;
+}
+
+div.aboutme {
+	text-indent: 25px;
+	position: relative;
+	float: left;
+	padding: 25px;
+}
+
+p {
+	position: relative;
+	top: 38px;
+}
+
+/* .inline {
+	display: inline;
+} */
+
+.inline:after {
+	content: '';
+	display: block;
+	margin-bottom: 1rem;
+}
+
+
+
+header.cm {
+	padding: 10px;
+	text-align: center;
+	color: #4aaaa5;
+	font-size: 25px;
+	border-bottom: 1px solid #e5e5e5;
+}
+
+#github {
+	position: relative
+	top: 15px;
+}
+
+#link {
+	position: relative;
+    left: 30px;
+    top: 15px;
+}
+
+#stack {
+	left: 60px;
+    position: relative;
+    top: 15px;
+}
+
+div.footer {
+	max-width: 960px;
+	position: absolute;
+	bottom:-20px;
+	display: block;
+	background-color: #666666;
+	width: 100%;
+	padding: 20px;
+	border-top: 5px solid #62a8a4;
+	flex-shrink: 0;
+}
+
+footer {
+	text-align: center;
+}
+
+a#hangman {
+	position: absolute;
+	top: 200px;
+    left: 80px;
+    float: left;
+}
+
+a#rpg {
+	position: absolute;
+    float: right;
+    top: 200px;
+}
+
+a#trivia{
+	position: absolute;
+	float: left;
+    top: 400px;
+    left: 80px;
+}
+
+a#rut {
+	position: absolute;
+	float: right;
+    top: 400px;
+}
+
+a#rock {
+	position: absolute;
+	float: left;
+    top: 600px;
+    left: 80px;
+}
+
+span.t {
+	display: block;
+    background: teal;
+    text-align: center;
+    font-size: large;
+}
+
+form{
+	position: absolute;
+	top: 220px;
+  left: 25px;
+}
+
+.cont3 {
+	width: 650px;
+}
+
+/* start media quaries */
+
+/*@media all and(max-width: 980px) {
+	.container {
+		width: 100%;
+	}
+}*/
+
+div.connect {
+	float: right;
+	display: block;	width: 270px;
+	background-color: #ffffff;
+	height: 150px;
+	border: 1px solid #dddddd;
+}
+
+@media all and (max-width: 980px) {
+	.container {
+		width: 980px;
+	}
+
+}
+
+@media all and (max-width: 768px) {
+	.container {
+		width: 768px;
+	}
+
+	.header {
+		width: 768px;
+	}
+
+	main {
+		width: 100%;
+		max-width: none;
+	}
+
+	div.connect {
+		width: 100%;
+		max-width: none;
+	}
+
+	.nav {
+		width: 330px;
+	}
+}
+
+@media all and (max-width: 640px){
+	.container {
+		width: 640px;
+
+	}
+
+	.header {
+		width: 640px;
+		height: 100%
+	}
+
+	.nav{
+		width: 100%
+	}
+
+	.cont2 {
+		width: 100%;
+	}
+
+	div.main {
+		width: 640px;
+	}
+
+	div.connect {
+		width: 100%;
+		max-width: none;
+	}
+
+}
