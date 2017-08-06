@@ -64,11 +64,10 @@ console.log(randomNum);
 //fucuntion to start game when Start! is clicked
 	function startGame() {
 		started = true;
-		letterSorter();
 		if (started === true) {
 			startM.innerHTML = "Lets Play!";
 			$(word).html(hiddenWord);
-			
+		letterSorter();
 		};
 	};
 
