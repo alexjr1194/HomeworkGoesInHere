@@ -10,7 +10,7 @@ $(function () {
 	var remaining = document.getElementById('remaining');
 	var guessed = document.getElementById('guessed');
 	var audio = new Audio("assets/e-s.mp3");
-	var started = false;
+	var started = true;
 
 // arrays for hidden word and users choice
 	var hiddenWord = [];
@@ -42,7 +42,7 @@ console.log(randomNum);
 //function that will sort the letter in users choice to push and append users choice to .word or to .guessed
 	function letterSorter () {
 
-			if (getRandomWord[0].indexOf(i) === usersChoice) {
+			if (getRandomWord[0].indexOf() === usersChoice) {
 				hiddenWord.push(usersChoice + " ");
 				word.append(hiddenWord);
 			}
@@ -63,7 +63,7 @@ console.log(randomNum);
 		
 //fucuntion to start game when Start! is clicked
 	function startGame() {
-		started = true;
+		//started = true;
 		if (started === true) {
 			startM.innerHTML = "Lets Play!";
 			$(word).html(hiddenWord);
