@@ -29,8 +29,7 @@ $ (function() {
 
   //function that resets the game
   function reset() {
-    randomNum = Math.floor(Math.random() * 101) + 19;
-    console.log(randomNum);
+    var randomNum = Math.floor(Math.random() * 101) + 19;
     $("#randomNum").html(randomNum);
     val1 = Math.floor(Math.random() * 11 + 1);
     val2 = Math.floor(Math.random() * 11 + 1);

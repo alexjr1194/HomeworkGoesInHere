@@ -1,8 +1,8 @@
 $(function () {
-// array carring all words available to be picked
+	// array carring all words available to be picked
 	var wordLibrary = ["PANDA","JAGUAR", "SEALION"];
 
-//begging of variable linking to elements in index.html
+	//begging of variable linking to elements in index.html
 	var startM = document.getElementById('startMessage');
 	var start = document.getElementById('start');
 	var result = document.getElementById('result');
@@ -12,12 +12,12 @@ $(function () {
 	var audio = new Audio("assets/e-s.mp3");
 	var started = true;
 
-// arrays for hidden word and users choice
+	// arrays for hidden word and users choice
 	var hiddenWord = [];
 	var usersChoice = [];
-// variable that will get a random numnber from 0 to 2
+	// variable that will get a random numnber from 0 to 2
 	var randomNum = Math.floor((Math.random() * wordLibrary.length));
-console.log(randomNum);
+	console.log(randomNum);
 
 // function that will choose a random word from wordLibrary
 	var getRandomWord = wordLibrary[randomNum];
@@ -25,37 +25,54 @@ console.log(randomNum);
 
 //for loop that gets every letter in getRandomWord and pushes it to hidden word as "_ "
 	for (i = 0; i < getRandomWord.length; i++) {
-		hiddenWord.push(getRandomWord[i] = "_ ");
+		hiddenWord.push(getRandomWord[i]);
 		};
+
+	hiddenWord = getRandomWord.split('');
 
 //code that will pick up whatever key the user presses
 	document.onkeypress = function(event) {
+
+		console.log(event.key);
 
 // variable that will store the key that was pressed
 		var letters = String.fromCharCode(event.keyCode).toUpperCase();
 
 //if else statement that will store letters into usersChoice or wrongChoice
 		usersChoice.push(letters);
+		letterSorter();
 	};
 
 
 //function that will sort the letter in users choice to push and append users choice to .word or to .guessed
 	function letterSorter () {
 
-			if (getRandomWord[0].indexOf() === usersChoice) {
-				hiddenWord.push(usersChoice + " ");
-				word.append(hiddenWord);
+			for (var i = 0; i < getRandomWord.length; i++) {
+				if (getRandomWord[i].indexOf(usersChoice) !== -1) {
+					// If letter existe
+					console.log(usersChoice)
+					hiddenWord.push(usersChoice)
+				} else {
+					// do something if letter doesn't exist in usersChoice
+					guessed.innerHTML(usersChoice)
+				}
 			}
-			if (getRandomWord[1].indexOf(i) === usersChoice) {
-				hiddenWord.push(usersChoice + " ");
-				word.append(hiddenWord);
-			}
-			if (getRandomWord[2].indexOf(i) === usersChoice) {
-				hiddenWord.push(usersChoice + " ");
-				word.push(usersChoice + " ");
-			}
+
+			// if (getRandomWord[0].indexOf() === usersChoice) {
+			// 	hiddenWord.push(usersChoice + " ");
+			// 	word.append(hiddenWord);
+			// }
+			// if (getRandomWord[1].indexOf(i) === usersChoice) {
+			// 	hiddenWord.push(usersChoice + " ");
+			// 	word.append(hiddenWord);
+			// }
+			// if (getRandomWord[2].indexOf(i) === usersChoice) {
+			// 	hiddenWord.push(usersChoice + " ");
+			// 	word.push(usersChoice + " ");
+			// }
+			
 			if (usersChoice !== getRandomWord[0].indexOf()) {
-			guessed.html(usersChoice);
+			guessed.innerHTML = usersChoice
 		}
 		
 		
