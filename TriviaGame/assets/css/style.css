@@ -1,0 +1,26 @@
+body{
+  background-image: url(../images/background2.png);
+  margin: auto;
+  width: 100%;
+  font-size: 50px;
+  color: gold;
+  font-family: 'Sedgwick Ave', cursive;
+}
+.container{
+  margin: 327px auto;
+  width: 40%;
+  background-image: url(../images/brain.png);
+}
+.header{
+  text-align: center;
+  font-size: 100px;
+  font-family: 'Sedgwick Ave Display', cursive;
+}
+
+#start{
+    font-size: xx-large;
+    padding: 25px;
+    width: 70%;
+    position: relative;
+    left: 100px;
+}

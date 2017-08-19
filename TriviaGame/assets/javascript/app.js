@@ -6,10 +6,8 @@ $(function() {
   //var storing how many wrong answers the user has
   var wrong = 0;
 
-
-
-
-
+  $("#restart").hide();
+  $(".choices").hide();
 
 
 
@@ -50,13 +48,6 @@ $(function() {
     choices: ["Steve Jobs", "Nikola Tesla", "Bill Gates", "Thomas Edison"],
     answer: "Thomas Edison"
   }
-  //questions
-  //var q7 ={
-  //  question : "",
-  //  choices: ["", "", "", ""],
- //  // answer: ""
-  //}
-
 
 
 
@@ -90,52 +81,49 @@ $(function() {
 
   //fucntion that will render out the question and the choices
   function renderQuestion() {
-    //for (var i = 0; i < questionsArray.length; i++) {
-      if (qIndex === 0) {
-        $(".question").html(questionsArray[qIndex].question);
-        $("#choice1").html("<h4>" + questionsArray[qIndex].choices[0] + "</h4>");
-        $("#choice2").html("<h4>" + questionsArray[qIndex].choices[1] + "</h4>");
-        $("#choice3").html("<h4>" + questionsArray[qIndex].choices[2] + "</h4>");
-        $("#choice4").html("<h4>" + questionsArray[qIndex].choices[3] + "</h4>");
-      };
-      if (qIndex === 1) {
-        $(".question").html(questionsArray[qIndex].question);
-        $("#choice1").html("<h4>" + questionsArray[qIndex].choices[0] + "</h4>");
-        $("#choice2").html("<h4>" + questionsArray[qIndex].choices[1] + "</h4>");
-        $("#choice3").html("<h4>" + questionsArray[qIndex].choices[2] + "</h4>");
-        $("#choice4").html("<h4>" + questionsArray[qIndex].choices[3] + "</h4>");
-      };
-      if (qIndex === 2) {
-        $(".question").html(questionsArray[qIndex].question);
-        $("#choice1").html("<h4>" + questionsArray[qIndex].choices[0] + "</h4>");
-        $("#choice2").html("<h4>" + questionsArray[qIndex].choices[1] + "</h4>");
-        $("#choice3").html("<h4>" + questionsArray[qIndex].choices[2] + "</h4>");
-        $("#choice4").html("<h4>" + questionsArray[qIndex].choices[3] + "</h4>");
-      };
-      if (qIndex === 3) {
-        $(".question").html(questionsArray[qIndex].question);
-        $("#choice1").html("<h4>" + questionsArray[qIndex].choices[0] + "</h4>");
-        $("#choice2").html("<h4>" + questionsArray[qIndex].choices[1] + "</h4>");
-        $("#choice3").html("<h4>" + questionsArray[qIndex].choices[2] + "</h4>");
-        $("#choice4").html("<h4>" + questionsArray[qIndex].choices[3] + "</h4>");
-      };
-      if (qIndex === 4) {
-        $(".question").html(questionsArray[qIndex].question);
-        $("#choice1").html("<h4>" + questionsArray[qIndex].choices[0] + "</h4>");
-        $("#choice2").html("<h4>" + questionsArray[qIndex].choices[1] + "</h4>");
-        $("#choice3").html("<h4>" + questionsArray[qIndex].choices[2] + "</h4>");
-        $("#choice4").html("<h4>" + questionsArray[qIndex].choices[3] + "</h4>");
-      };
-      if (qIndex === 5) {
-        $(".question").html(questionsArray[qIndex].question);
-        $("#choice1").html("<h4>" + questionsArray[qIndex].choices[0] + "</h4>");
-        $("#choice2").html("<h4>" + questionsArray[qIndex].choices[1] + "</h4>");
-        $("#choice3").html("<h4>" + questionsArray[qIndex].choices[2] + "</h4>");
-        $("#choice4").html("<h4>" + questionsArray[qIndex].choices[3] + "</h4>");
-      };
-    //}
+    if (qIndex === 0) {
+      $(".question").html(questionsArray[qIndex].question);
+      $("#choice1").html("<h4>" + questionsArray[qIndex].choices[0] + "</h4>");
+      $("#choice2").html("<h4>" + questionsArray[qIndex].choices[1] + "</h4>");
+      $("#choice3").html("<h4>" + questionsArray[qIndex].choices[2] + "</h4>");
+      $("#choice4").html("<h4>" + questionsArray[qIndex].choices[3] + "</h4>");
+    };
+    if (qIndex === 1) {
+      $(".question").html(questionsArray[qIndex].question);
+      $("#choice1").html("<h4>" + questionsArray[qIndex].choices[0] + "</h4>");
+      $("#choice2").html("<h4>" + questionsArray[qIndex].choices[1] + "</h4>");
+      $("#choice3").html("<h4>" + questionsArray[qIndex].choices[2] + "</h4>");
+      $("#choice4").html("<h4>" + questionsArray[qIndex].choices[3] + "</h4>");
+    };
+    if (qIndex === 2) {
+      $(".question").html(questionsArray[qIndex].question);
+      $("#choice1").html("<h4>" + questionsArray[qIndex].choices[0] + "</h4>");
+      $("#choice2").html("<h4>" + questionsArray[qIndex].choices[1] + "</h4>");
+      $("#choice3").html("<h4>" + questionsArray[qIndex].choices[2] + "</h4>");
+      $("#choice4").html("<h4>" + questionsArray[qIndex].choices[3] + "</h4>");
+    };
+    if (qIndex === 3) {
+      $(".question").html(questionsArray[qIndex].question);
+      $("#choice1").html("<h4>" + questionsArray[qIndex].choices[0] + "</h4>");
+      $("#choice2").html("<h4>" + questionsArray[qIndex].choices[1] + "</h4>");
+      $("#choice3").html("<h4>" + questionsArray[qIndex].choices[2] + "</h4>");
+      $("#choice4").html("<h4>" + questionsArray[qIndex].choices[3] + "</h4>");
+    };
+    if (qIndex === 4) {
+      $(".question").html(questionsArray[qIndex].question);
+      $("#choice1").html("<h4>" + questionsArray[qIndex].choices[0] + "</h4>");
+      $("#choice2").html("<h4>" + questionsArray[qIndex].choices[1] + "</h4>");
+      $("#choice3").html("<h4>" + questionsArray[qIndex].choices[2] + "</h4>");
+      $("#choice4").html("<h4>" + questionsArray[qIndex].choices[3] + "</h4>");
+    };
+    if (qIndex === 5) {
+      $(".question").html(questionsArray[qIndex].question);
+      $("#choice1").html("<h4>" + questionsArray[qIndex].choices[0] + "</h4>");
+      $("#choice2").html("<h4>" + questionsArray[qIndex].choices[1] + "</h4>");
+      $("#choice3").html("<h4>" + questionsArray[qIndex].choices[2] + "</h4>");
+      $("#choice4").html("<h4>" + questionsArray[qIndex].choices[3] + "</h4>");
+    };
   };
-  //console.log(renderQuestion());
  
 
 
@@ -147,8 +135,6 @@ $(function() {
     $(".answer").empty();
     $(".time").empty();
   }
-//}
-//console.log(stopGame());
 
 
 
@@ -166,67 +152,43 @@ $(function() {
       $("#choice2").val(questionsArray[qIndex].choices[1]);
       $("#choice3").val(questionsArray[qIndex].choices[2]);
       $("#choice4").val(questionsArray[qIndex].choices[3]);
-      console.log($(".choices").val())
-      console.log($("#choice2").val())
-      console.log($("#choice3").val())
-      console.log($("#choice4").val())
     }
     if (qIndex === 1) {
       $("#choice1").val(questionsArray[qIndex].choices[0]);
       $("#choice2").val(questionsArray[qIndex].choices[1]);
       $("#choice3").val(questionsArray[qIndex].choices[2]);
       $("#choice4").val(questionsArray[qIndex].choices[3]);
-      console.log($("#choice1").val())
-      console.log($("#choice2").val())
-      console.log($("#choice3").val())
-      console.log($("#choice4").val())
     }
     if (qIndex === 2) {
       $("#choice1").val(questionsArray[qIndex].choices[0]);
       $("#choice2").val(questionsArray[qIndex].choices[1]);
       $("#choice3").val(questionsArray[qIndex].choices[2]);
       $("#choice4").val(questionsArray[qIndex].choices[3]);
-      console.log($("#choice1").val())
-      console.log($("#choice2").val())
-      console.log($("#choice3").val())
-      console.log($("#choice4").val())
     }
     if (qIndex === 3) {
       $("#choice1").val(questionsArray[qIndex].choices[0]);
       $("#choice2").val(questionsArray[qIndex].choices[1]);
       $("#choice3").val(questionsArray[qIndex].choices[2]);
       $("#choice4").val(questionsArray[qIndex].choices[3]);
-      console.log($("#choice1").val())
-      console.log($("#choice2").val())
-      console.log($("#choice3").val())
-      console.log($("#choice4").val())
     }
     if (qIndex === 4) {
       $("#choice1").val(questionsArray[qIndex].choices[0]);
       $("#choice2").val(questionsArray[qIndex].choices[1]);
       $("#choice3").val(questionsArray[qIndex].choices[2]);
       $("#choice4").val(questionsArray[qIndex].choices[3]);
-      console.log($("#choice1").val())
-      console.log($("#choice2").val())
-      console.log($("#choice3").val())
-      console.log($("#choice4").val())
     }
     if (qIndex === 5) {
       $("#choice1").val(questionsArray[qIndex].choices[0]);
       $("#choice2").val(questionsArray[qIndex].choices[1]);
       $("#choice3").val(questionsArray[qIndex].choices[2]);
       $("#choice4").val(questionsArray[qIndex].choices[3]);
-      console.log($("#choice1").val())
-      console.log($("#choice2").val())
-      console.log($("#choice3").val())
-      console.log($("#choice4").val())
     }
   }
 
 
 
 
-
+  //function for when the user gets the answer wrong
   function correctAns() {
     correct++
     qIndex++
@@ -237,7 +199,7 @@ $(function() {
 
 
 
-
+  //function for when the user gets the answer wrong
   function wrongAns() {
     qIndex++
     wrong++
@@ -258,7 +220,6 @@ $(function() {
   $("#choice1").on("click", function() {
     if ($("#choice1").val() === questionsArray[qIndex].answer) {
       correctAns();
-      //console.log(correct)
     }
     else{
       wrongAns();
@@ -268,7 +229,6 @@ $(function() {
   $("#choice2").on("click", function() {
     if ($("#choice2").val() === questionsArray[qIndex].answer) {
       correctAns();
-      //console.log(correct)
     }
     else{
       wrongAns();
@@ -278,8 +238,6 @@ $(function() {
   $("#choice3").on("click", function() {
     if ($("#choice3").val() === questionsArray[qIndex].answer) {
      correctAns();
-    
-      //cocorrect)
     }
     else{
      wrongAns();
@@ -289,12 +247,9 @@ $(function() {
   $("#choice4").on("click", function() {
     if ($("#choice4").val() === questionsArray[qIndex].answer) {
      correctAns();
-    
-      //console.log(correct)
     }
     else{
       wrongAns();
-   
     }
   })
 
@@ -314,7 +269,6 @@ $(function() {
   //function to render Time
   function renderTime() {
     $(".time").html("<h3>" + timer.time + " seconds remaining!</h3>")
-    //renderQuestion();
   }
 
 
@@ -361,7 +315,6 @@ $(function() {
     count: function() {
       if (qIndex <= questionsArray.length) {
         timer.time--;
-        //console.log(timer.time);
         if (timer.time >= 0) {
           renderTime();
         };
@@ -373,10 +326,12 @@ $(function() {
         };
         if (qIndex >= questionsArray.length) {
           timer.stop();
+          $("#restart").show();
           $(".question").html("<h2>Correct: " + correct + "</h2>" + "<h2> Wrong:" + wrong + "</h2>");
-          $(".answer").empty();
+          $(".choices").hide();
           $(".time").empty();
-          alert("You're all done! Check your score bellow!!");
+          alert("You're all done! Check your score bellow!!"); 
+
         };
       }
    }
@@ -401,24 +356,24 @@ $(function() {
 
 
 
-
-
+  //funcion for when the user clicks on the restart button
+  $("#restart").on("click", function() {
+    $("#restart").hide();
+    $(".choices").show();
+    qIndex = 0;
+    timer.reset();
+    timer.start();
+  });
 
 
 
   //function for when start is clicked
   $("#start").on("click", function(){
     timer.start();
-    $(".start").empty();
+    $("#start").hide();
+    $(".choices").show();
   });
 
   
 
-  //fucntion for when a user clicks on a choice
-  //$(".choices").on("click", fucntion() {
-
-  //})
-  //console.log(timer.count());
-  //console.log(timer.reset());
-  //console.log(timer.start());
 });
