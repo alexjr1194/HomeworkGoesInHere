@@ -1,6 +1,6 @@
 $(function() {
   var topics = ["How High", "Dogs", "Game of Thrones", "Nissan GTR"];
-  var apiKey = "&api_key=23e73ab089ef4711a0dcb870c70b2f5c";
+  var apiKey = "&api_key=23e73ab089ef4711a0dcb870c70b2f5c&limit=10";
   var url = "http://api.giphy.com/v1/gifs/search?q=";
   //var 
   console.log($("#search").val());
@@ -22,10 +22,50 @@ $(function() {
 
 
   //function that will display gifs in the gid-view div
-  //function renderGif() {
+  function displayGif() {
+    var topic = $(this).attr("data-name");
+    console.log(topic);
+    var queryURL = url + topic + apiKey;
+    console.log(queryURL);
+    $.ajax({
+      url: queryURL,
+      method: "GET"
+    }).done(function(response) {
+      var results = response.data;
+      console.log(results)
+
+      //for loop that will run for the length of results
+      for (var i = 0; i < results.length; i++) {
+
+        //variable storing new gif tagw with the class item
+        var gifDiv = $("<div class='gifs'>");
+
+        //variable storing the raiting of the gif        
+        var rating = results[i].rating;
 
 
-  //}
+        //variable storing a p tag with the rating of the gif
+        var p = $("<p>").text("Rating: " + rating);
+
+        //variable storing new img tag
+        var gifImage = $("<img>");
+
+        //setting src attr for gif 
+        gifImage.attr("src", results[i].images.original_still.url);
+
+        gifImage.attr("data-state", "still");
+        gifImage.attr("data-still", results[i].images.original_still.url);
+        gifImage.attr("data-animate", results[i].url);
+
+
+        gifDiv.prepend(p);
+        gifDiv.prepend(gifImage);
+        console.log(gifImage)
+
+        $("#gif-view").prepend(gifDiv);
+      };
+    });
+  }
 
   //onclick function that will push the value of #search into the topics array and will render the new topic as a button
   $("#addButton").on("click", function(event) {
@@ -34,9 +74,8 @@ $(function() {
     renderButtons();
   });
 
-  //onclick function for when the topics button is clicked that will display gifs
-  $(".topics").on("click", function() {
-    console.log($(this).val())
-  });
+  //onclick function for when a button with the class of topics is clicked will display gifs
+  $(document).on("click", ".topics", displayGif);
+
 
 });
