@@ -1,7 +1,7 @@
 $(function() {
   var topics = ["How High", "Dogs", "Game of Thrones", "Nissan GTR"];
   var apiKey = "&api_key=23e73ab089ef4711a0dcb870c70b2f5c&limit=10";
-  var url = "http://api.giphy.com/v1/gifs/search?q=";
+  var url = "https://api.giphy.com/v1/gifs/search?q=";
   //var 
   console.log($("#search").val());
 
