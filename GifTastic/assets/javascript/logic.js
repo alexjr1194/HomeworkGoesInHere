@@ -38,7 +38,7 @@ $(function() {
       for (var i = 0; i < results.length; i++) {
 
         //variable storing new gif tagw with the class item
-        var gifDiv = $("<div class='gifs'>");
+        var gifDiv = $("<div class='items'>");
 
         //variable storing the raiting of the gif        
         var rating = results[i].rating;
@@ -48,14 +48,14 @@ $(function() {
         var p = $("<p>").text("Rating: " + rating);
 
         //variable storing new img tag
-        var gifImage = $("<img>");
+        var gifImage = $("<img class='gifs'>");
 
         //setting src attr for gif 
-        gifImage.attr("src", results[i].images.original_still.url);
+        gifImage.attr("src", results[i].images.fixed_height_still.url);
 
         gifImage.attr("data-state", "still");
-        gifImage.attr("data-still", results[i].images.original_still.url);
-        gifImage.attr("data-animate", results[i].url);
+        gifImage.attr("data-still", results[i].images.fixed_height_still.url);
+        gifImage.attr("data-animate", results[i].images.fixed_height.url);
 
 
         gifDiv.prepend(p);
@@ -74,8 +74,31 @@ $(function() {
     renderButtons();
   });
 
-  //onclick function for when a button with the class of topics is clicked will display gifs
+  //eventlistener for when a button with the class of topics is clicked will display gifs
   $(document).on("click", ".topics", displayGif);
 
+
+  function stopStart() {
+    //variable storing the state the gif is in
+    var state = $(this).attr("data-state");
+    console.log(state);
+
+    if (state === "still") {
+      var url = $(this).attr("data-animate");
+      $(this).attr("src", url);
+      $(this).attr("data-state", "animate");
+    }
+    
+
+    else {
+      var url = $(this).attr("data-still");
+      $(this).attr("src", url);
+      $(this).attr("data-state", "still");
+    }
+
+
+  };
+  //event listener for when a gif is clicked
+  $(document).on("click", ".gifs", stopStart);
 
 });
