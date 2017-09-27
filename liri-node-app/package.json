@@ -13,6 +13,7 @@
     "inquirer": "^3.3.0",
     "lodash": "^4.17.4",
     "node-spotify-api": "^1.0.7",
+    "request": "^2.82.0",
     "twitter": "^1.7.1"
   }
 }
