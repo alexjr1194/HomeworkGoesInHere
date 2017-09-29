@@ -61,8 +61,7 @@ function movieThis(movieSearch){
 
   request('http://www.omdbapi.com/?t=' + movieSearch + '&apikey=40e9cece', function(error, response, body){
     var body = JSON.parse(body);
-    console.log('An error occured: ' + error);
-    console.log(response.statusCode)
+    //console.log(response.statusCode)
     if(!error && response.statusCode === 200){
       console.log(movieSearch)
       console.log('\n-------------\nMovie Name: ' + body.Title + '\nYear: ' + body.Year + '\nIMDB Rating: ' + body.imdbRating +
@@ -70,6 +69,9 @@ function movieThis(movieSearch){
         '\nPlot: ' + body.Plot + '\nActors: ' + body.Actors + '\n-------------');
       //console.log(JSON.parse(body));
     }
+    else{
+    console.log('An error occured: ' + error);
+  }
   });
     fs.appendFile('log.txt', command + ' ' + movieSearch + ', ', function(error) {
       if(error){
@@ -112,10 +114,9 @@ if (command === "my-tweets") {
 
 //if command is equal to 'spotify this song' then
 if (command === "spotify-this-song"){
-  var search = 'The Sign, Ace of Base';
-  for(var i = 3; i < args.length; i++) {
-    search = args[i];
-  }
+  var search = args.slice(3).join(' ');
+  //console.log(search);
+
   //Telling the user we found songs related to what they input
   console.log("\n-------------\nHere are the songs I found related to " + search + '\n-------------');
   //execute spotifySongs function
@@ -123,13 +124,11 @@ if (command === "spotify-this-song"){
 }
 
 if (command === 'movie-this') {
-  var movieSearch = 'Mr. Nobody';
-  for(var i = 3; i < args.length; i++) {
-    movieSearch = args[i];
-  }
-  console.log('\n-------------\nHere are the movies I found related to' + movieSearch + '\n-------------');
+  var movieSearch = args.slice(3).join(' ');
+  
+  console.log('\n-------------\nHere are the movies I found related to ' + movieSearch + '\n-------------');
   movieThis(movieSearch);
-};
+}
 
 if(command === 'do-what-it-says'){
   console.log('\n-------------\nI fallowed orders! \n-------------')
