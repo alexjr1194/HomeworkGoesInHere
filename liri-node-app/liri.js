@@ -59,18 +59,23 @@ function spotifySong(search) {
 
 function movieThis(movieSearch){
 
-  request('http://www.omdbapi.com/?t=' + movieSearch + '&apikey=40e9cece', function(error, response, body){
+  request('http://www.omdbapi.com/?t=' + movieSearch + '&tomotoes=true&apikey=40e9cece', function(error, response, body){
     var body = JSON.parse(body);
     //console.log(response.statusCode)
-    if(!error && response.statusCode === 200){
+    if(error || response.statusCode !== 200){
+      movieSearch = "Mr Nobody";
       console.log(movieSearch)
-      console.log('\n-------------\nMovie Name: ' + body.Title + '\nYear: ' + body.Year + '\nIMDB Rating: ' + body.imdbRating +
-        '\nRotten Tomatoes Raiting: ' + body.Ratings[1].Value + '\nCountry: ' + body.Country + '\nLanguage: ' + body.Language +
-        '\nPlot: ' + body.Plot + '\nActors: ' + body.Actors + '\n-------------');
       //console.log(JSON.parse(body));
     }
     else{
-    console.log('An error occured: ' + error);
+      if (!body.Title && !body.Released && !body.imdbRating && !body.Ratings) {
+        console.log('\nAn error occured: Movie was not found!');
+      }
+      else{
+        console.log('\n-------------\nMovie Name: ' + body.Title + '\nYear: ' + body.Year + '\nIMDB Rating: ' + body.imdbRating +
+        '\nRotten Tomatoes Raiting: ' + body.Ratings[1].Value + '\nCountry: ' + body.Country + '\nLanguage: ' + body.Language +
+        '\nPlot: ' + body.Plot + '\nActors: ' + body.Actors + '\n-------------');
+      }
   }
   });
     fs.appendFile('log.txt', command + ' ' + movieSearch + ', ', function(error) {
