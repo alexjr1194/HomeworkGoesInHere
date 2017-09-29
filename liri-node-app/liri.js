@@ -120,6 +120,9 @@ if (command === "my-tweets") {
 //if command is equal to 'spotify this song' then
 if (command === "spotify-this-song"){
   var search = args.slice(3).join(' ');
+  if(!search){
+   search = "The Sign Ace of Base";
+  }
   //console.log(search);
 
   //Telling the user we found songs related to what they input
@@ -130,6 +133,9 @@ if (command === "spotify-this-song"){
 
 if (command === 'movie-this') {
   var movieSearch = args.slice(3).join(' ');
+  if (!movieSearch) {
+     movieSearch = 'Mr Nobody';
+  }
   
   console.log('\n-------------\nHere are the movies I found related to ' + movieSearch + '\n-------------');
   movieThis(movieSearch);
