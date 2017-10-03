@@ -69,7 +69,7 @@ function movieThis(movieSearch){
     }
     else{
       if (!body.Title && !body.Released && !body.imdbRating && !body.Ratings) {
-        console.log('\nAn error occured: Movie was not found!');
+        console.log('\n-------------\nAn error occured: Movie was not found!\n-------------');
       }
       else{
         console.log('\n-------------\nMovie Name: ' + body.Title + '\nYear: ' + body.Year + '\nIMDB Rating: ' + body.imdbRating +
