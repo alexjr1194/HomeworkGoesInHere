@@ -1,0 +1,1 @@
+{"front":"How many states are in the USA?","back":"50","type":"basic"};{"text":"George Washington was the first president","cloze":"George","clozeDelete":"_____ Washington was the first president","type":"cloze"};

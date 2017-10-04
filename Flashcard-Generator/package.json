@@ -1,0 +1,14 @@
+{
+  "name": "flashcard-generator",
+  "version": "1.0.0",
+  "description": "will make a flashhcard depending on wether user wants to create a basic card or a clozed card",
+  "main": "flashcard.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Cecilio Ramirez",
+  "license": "ISC",
+  "dependencies": {
+    "inquirer": "^3.3.0"
+  }
+}
