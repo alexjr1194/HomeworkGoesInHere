@@ -72,7 +72,7 @@ function addCard() {
         ]).then(function(answer) {
           var newBasic = new BasicCard(answer.front, answer.back);
           newBasic.create();
-          whatsNext();
+          nowWhat();
         })
     }
     else if(answer.cardType === 'cloze-flashcard') {
@@ -109,7 +109,7 @@ function addCard() {
           if (text.includes(cloze)) {
             var newCloze = new ClozedCard(text, cloze);
             newCloze.create();
-            whatsNext();
+            nowWhat();
           }
           else{
             console.log("The cloze portion you provided is not found in the full text! Please try again!")
@@ -119,7 +119,7 @@ function addCard() {
     }
   })
 }
-function whatsNext() {
+function nowWhat() {
     // get user input
     inquirer.prompt([{
         name: 'nextAction',
