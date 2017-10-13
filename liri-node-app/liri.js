@@ -1,30 +1,29 @@
 var keys = require('./keys.js');
-var spotifyKeys = require('./spotifyKeys.js')
+var spotifyKeys = require('./spotifyKeys.js');
 var fs = require('fs');
 var request = require('request');
-//var inquirer = require('inquirer');
-//
+
 var args = process.argv;
 var command = args[2];
 
 console.log(process.argv);
 
-//Working function that will get tweets and times stamp for tweets
-function getTweet(){
+// Working function that will get tweets and times stamp for tweets
+function getTweet () {
   var params = {screen_name: 'alexUCBCoding', count: 20};
-  keys.get('statuses/user_timeline', params, function(error, tweets, response) {
+  keys.get('statuses/user_timeline', params, function (error, tweets, response) {
     if (!error) {
-        for(var i in tweets) {
-          console.log('\n-------------' + '\nTweet: ' + tweets[i].text + '\nTime created:' + tweets[i].created_at + '\n-------------');
-        };
-        
-        fs.appendFile('log.txt', command +', ', function(error) {
-          if(error){
-            console.log('\nAn error occured: ' + error)
-          }
-          console.log("\n-------------\nLogs have been updated.\n-------------\n");
-        });
-    } 
+      for (var i in tweets) {
+        console.log('\n-------------' + '\nTweet: ' + tweets[i].text + '\nTime created:' + tweets[i].created_at + '\n-------------');
+      }
+
+      fs.appendFile('log.txt', command + ', ', function (error) {
+        if (error) {
+          console.log('\nAn error occured: ' + error)
+        }
+        console.log("\n-------------\nLogs have been updated.\n-------------\n");
+      });
+    }
     else {
         throw error;
     }
@@ -136,7 +135,7 @@ if (command === 'movie-this') {
   if (!movieSearch) {
      movieSearch = 'Mr Nobody';
   }
-  
+
   console.log('\n-------------\nHere are the movies I found related to ' + movieSearch + '\n-------------');
   movieThis(movieSearch);
 }
@@ -145,4 +144,3 @@ if(command === 'do-what-it-says'){
   console.log('\n-------------\nI fallowed orders! \n-------------')
   doThis();
 }
-

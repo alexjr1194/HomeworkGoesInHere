@@ -36,6 +36,3 @@ VALUES('Schledge Front Door Lock', 'House', 170, 20);
 
 INSERT INTO products(product_name, department_name, price, stock_quantity)
 VALUES('Philips Hue Light Bulbs', 'House', 100, 100);
-
-DELETE FROM products
-WHERE product_name = 'Bose Headphones' SET 'stock_quantity' -=25;

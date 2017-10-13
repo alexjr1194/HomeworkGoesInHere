@@ -4,8 +4,7 @@
   "description": "Command line application that will get data from bamazon database that will display items to the user wich they can choose if they want to buy them",
   "main": "index.js",
   "scripts": {
-    "mysql": "sudomysql -uroot -p < bamazonSchema.sql",
-    "whileLoop": "while true; do sleep && echo 1; done",
+    "mysql-import": "mysql -h 127.0.0.1 -uroot < bamazonSchema.sql",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
