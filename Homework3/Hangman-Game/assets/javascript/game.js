@@ -1,5 +1,9 @@
-window.onload = function() {
-  var wordLibrary = ["PANDA","JAGUAR", "SEALION"];
+$(function(){
+  var wordLibrary = [
+    ["PANDA","JAGUAR", "SEALION"],
+    ['BUGGATI']
+    
+    ];
 
   var randomWord = wordLibrary[Math.floor(Math.random() * wordLibrary.length)];
   console.log(randomWord);
@@ -7,15 +11,15 @@ window.onload = function() {
 
   function renderRanWor() {
 
-  	for (var i = 0; i < randomWord.length; i++) {
-  			randomWord = "_ ";
-  			console.log(randomWord);
-  		}
-  	document.getElementById('word').innerHTML= hiddenWord;
-  	};  
-  	renderRanWor();
-  		console.log(renderRanWor());
-};
+    for (var i = 0; i < randomWord.length; i++) {
+        randomWord = "_ ";
+        console.log(randomWord);
+      }
+    document.getElementById('word').innerHTML= hiddenWord;
+    };  
+    renderRanWor();
+      console.log(renderRanWor());
+})
 
 
-
+wordLibrary[0]
