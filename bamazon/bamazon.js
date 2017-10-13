@@ -11,7 +11,6 @@ var connection = mysql.createConnection({
 
 connection.connect(function(err) {
   if (err) throw err;
-  console.log("this worsks??");
   start();
 })
 function start() {
@@ -42,7 +41,7 @@ function start() {
           {
             name: 'choose',
             type: 'list',
-            message: 'What Item would you like to buy?',
+            message: 'Welcome to Bamazon! :) \nWhat Item would you like to buy today?',
             choices: item
           },
           {
@@ -82,7 +81,8 @@ function start() {
               buyItem();
             }
             else{
-              console.log('You just spent ' + results[i].price + '')
+              var amount = results[i].price * answer.quantity;
+              console.log('You just spent $' + amount + '')
               whatnext();
             }
             }
